@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        td,th{
+            width: 100px;
+            height: 60px;
+            text-align: center;
+            background-color: bisque;
+            color: black;
+        }
+        .header{
+            display: flex;
+            justify-content: center;
+        }
+        .content{
+            background-color: black;
+            color: white;
+        }
+        .container{
+            width: 800px;
+            height: 1200px;
+            position: relative;
+            bottom: 480px;
+            left: 200px;
+        }
+        .input_value{
+            background-color: blue;
+        }
+        input{
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        
+          <table border="1" class="input_value">
+          </td><td>
+            <tr><td>tamil</td><td>: </td><td><input type="text" id="tamil"></td></tr>
+            <tr><td>english</td><td>:</td><td><input type="text" id="english"></td></tr>
+            <tr><td>math</td><td>:</td><td><input type="text" id="math"></td></tr>
+            <tr><td>science</td><td>:<td><input type="text" id="science"></td></tr>
+            <tr><td>social</td><td>:</td><td><input type="text" id="social"></td></tr>
+            <tr><td><button id="button" onclick="clicks()">button</button></td></tr>
+            </table>
+<center>
+    <div class="container">
+        <div class="content"><h2>STUDENT PROGRESS</h2>
+        <div class="header">
+            <img src="./image.jpeg" width="50px" height="50px">
+            <h3>WEB INTERNATIONAL SCHOOL<br>
+           ERODE</h3>
+        </div>
+
+<table border="1" id="output_value">
+    <tr><th>SUBJECT NAME</th><th>MARK</th><th>TOTAL MARK</th><th>AVERAGR</th><th>PASS || FAIL</th></tr>
+    <tr><td><p id="sub_tamil"></p></td><td><p id="tamil_output"></p></td><td><p id="outof_tamil"></p></td><td><p id="tamil_avg"></p></td><td><p id="valid_tamil"></p></td></tr>
+    <tr><td><p id="sub_english"></p></td><td><p id="english_output"></p></td><td><p id="outof_english"></p></td><td><p id="english_avg"></p></td><td><p id="valid_english"></p></td></tr>
+    <tr><td><p id="sub_math"></p></td><td> <p id="math_output"></p></td><td><p id="outof_math"></p></td><td><p id="math_avg"></p></td><td><p id="valid_math"></p></td></tr>
+    <tr><td> <p id="sub_science"></p></td><td><p id="science_output"></p></td><td><p id="outof_science"></p></td><td><p id="science_avg"></p></td><td><p id="valid_science"></p></td></tr>
+    <tr><td><p id="sub_social"></p></td><td><p id="social_output"></p></td><td><p id="outof_social"></p></td><td><p id="social_avg"></p></td><td><p id="valid_social"></p></td></tr>
+    <tr><td><p id="total_marks"></p></td><td><p id="total"></p></td><td><p id="outof_total"></p></td><td><p id="total_avg"></p></td><td><p id="valid_average"></p></td></tr>
+    <tr><td><p onclick="window.print()">print</p></td></tr>
+ </table>
+        </table></div></center>
+   
+
+    <script>
+        
+        function clicks(){
+            var tamil=document.getElementById('tamil').value
+            var english=document.getElementById("english").value
+            var math=document.getElementById("math").value
+            var science=document.getElementById("science").value
+            var social=document.getElementById("social").value
+
+            
+
+
+            var calu=Number(tamil)+Number(english)+Number(math)+Number(science)+Number(social)
+          
+           
+
+            var total=document.getElementById("total")
+            total.textContent=calu
+
+
+            var tamil_output=document.getElementById("tamil_output")
+            tamil_output.textContent=`${tamil}`
+
+            var english_output=document.getElementById("english_output")
+            english_output.textContent=`${english}`
+
+            var math_output=document.getElementById("math_output")
+            math_output.textContent=`${math}`
+
+            var science_output=document.getElementById("science_output")
+            science_output.textContent=`${science}`
+
+            var social_output=document.getElementById("social_output")
+            social_output.textContent=`${social}`
+
+            var total_marks=document.getElementById("total_marks")
+            total_marks.textContent="Total"
+
+            var sub_tamil=document.getElementById('sub_tamil')
+            sub_tamil.textContent="Tamil"
+
+            var sub_english=document.getElementById('sub_english')
+            sub_english.textContent="English"
+
+            var sub_math=document.getElementById('sub_math')
+            sub_math.textContent="Math"
+
+            var sub_science=document.getElementById('sub_science')
+            sub_science.textContent="Science"
+
+            var sub_social=document.getElementById('sub_social')
+            sub_social.textContent="Social"
+
+            var outof_tamil=document.getElementById("outof_tamil")
+            outof_tamil.textContent="100"
+
+            var outof_english=document.getElementById("outof_english")
+            outof_english.textContent="100"
+
+            var outof_math=document.getElementById("outof_math")
+            outof_math.textContent="100"
+
+            var outof_science=document.getElementById("outof_science")
+            outof_science.textContent="100"
+
+            var outof_social=document.getElementById("outof_social")
+            outof_social.textContent="100"
+
+            var outof_total=document.getElementById("outof_total")
+            outof_total.textContent="500"
+
+            
+            var tamil_avg=document.getElementById("tamil_avg")
+            tamil_avg.textContent=Number(tamil/5)
+
+            var english_avg=document.getElementById("english_avg")
+            english_avg.textContent=Number(english/5)
+
+            var math_avg=document.getElementById("math_avg")
+            math_avg.textContent=Number(math/5)
+
+            var science_avg=document.getElementById("science_avg")
+            science_avg.textContent=Number(science/5) 
+
+            var social_avg=document.getElementById("social_avg")
+            social_avg.textContent=Number(social/5)
+
+            var total_avg=document.getElementById("total_avg")
+            total_avg.textContent=Math.floor(calu/5)
+
+            if(tamil>=35){
+                var valid_tamil=document.getElementById("valid_tamil")
+                valid_tamil.textContent="pass"
+                valid_tamil.style.color='green'
+            }
+            else{
+                var valid_tamil=document.getElementById("valid_tamil")
+                valid_tamil.textContent="fail"
+                valid_tamil.style.color='red'
+            }
+            
+            if(english>=35){
+                var valid_english=document.getElementById("valid_english")
+                valid_english.textContent="pass"
+                valid_english.style.color='green'
+            }
+            else{
+                var valid_english=document.getElementById("valid_english")
+                valid_english.textContent="fail"
+                valid_english.style.color='red'
+            }
+
+            if(math>=35){
+                var valid_math=document.getElementById("valid_math")
+                valid_math.textContent="pass"
+                valid_math.style.color='green'
+            }
+            else{
+                var valid_math=document.getElementById("valid_math")
+                valid_math.textContent="fail"
+                valid_math.style.color='red'
+            }
+
+            if(science>=35){
+                var valid_science=document.getElementById("valid_science")
+                valid_science.textContent="pass"
+                valid_science.style.color='green'
+            }
+            else{
+                var valid_science=document.getElementById("valid_science")
+                valid_science.textContent="fail"
+                valid_science.style.color='red'
+            }
+
+            if(social>=35){
+                var valid_social=document.getElementById("valid_social")
+                valid_social.textContent="pass"
+                valid_social.style.color='green'
+            }
+            else{
+                var valid_social=document.getElementById("valid_social")
+                valid_social.textContent="fail"
+                valid_social.style.color='red'
+            }
+
+            if(tamil>=35 && english>=35 && math>=35 && science>=35 && social>35){
+                var valid_average=document.getElementById("valid_average")
+                valid_average.textContent="pass"
+                valid_average.style.color="green"
+            }
+            else{
+                var valid_average=document.getElementById("valid_average")
+                valid_average.textContent="fail"
+                valid_average.style.color="red"
+            }
+
+            
+
+
+
+
+
+
+
+}
+    </script>
+
+
+
+</body>
+</html>
